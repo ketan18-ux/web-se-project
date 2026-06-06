@@ -2,7 +2,7 @@ services:
   - type: web
     name: govportal-backend
     env: node
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --unsafe-perm && cd client && npm install --unsafe-perm && chmod -R 755 node_modules/.bin && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
